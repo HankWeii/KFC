@@ -1,0 +1,104 @@
+.navshita {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(216, 216, 216);
+    padding: 1rem;
+}
+
+.navlefttitle,.navrighttitle {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color:#2980a9;
+    margin: auto;
+}
+
+
+
+.navrighttitle {
+    text-decoration: none;
+}
+
+body{
+    margin: 0;
+}
+
+nav {
+    border: 2px solid black;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    margin-bottom: 0.5rem;
+}
+
+
+
+hr {
+    border-top: 0.2rem solid #b4b4b4;
+
+}
+
+.boxouther {
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.mainbox {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 70%;
+    margin:0px auto;
+}
+
+.mainbox div {
+    width: 20em;
+    background-color: #eef0ff;
+    padding: 0.1em 0.5em;
+    height: 5em;
+    text-align: left;
+    border-radius: 0.5em;
+    color:#000;
+    margin: 0.3em;
+}
+
+
+
+.date {
+    float: right;
+}
+
+.salecode {
+    font-weight: bold;
+    padding: 0 0 0 1rem;
+}
+
+.discount{
+    padding: 0 0 0 1rem;
+}
+
+.button {
+    font-size: 1.4rem;
+    height: 3.5rem;
+    width: 10em;
+    line-height: 3.5rem;
+    padding: 0rem 1rem;
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 0.5em;
+    word-wrap:break-word;
+    margin: 0.1em;
+}
+
+.buttonouther {
+    display: flex;
+    width: 58%;
+    flex-wrap: wrap;
+    margin:0px auto;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #b4b4b4;
+}
+
