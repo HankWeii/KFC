@@ -1,97 +1,89 @@
 let boxstyle = document.querySelectorAll(".box");
 
-let chickennuggetsSwitch = false;
-let ChickenNuggets = document.querySelector(".chickennuggets");
-ChickenNuggets.onclick = ChickenNuggetsSearchOn;
 
-function ChickenNuggetsSearchOn(){
-    if(!chickennuggetsSwitch){
-        ChickenNuggets.style.backgroundColor = "#b4b4b4";
-        chickennuggetsSwitch = true;
-        for(let i=0; i<boxstyle.length; i++){
-            let discountText = boxstyle[i].innerHTML;
-            let Searchkeyword = discountText.search("雞塊");
-            if(Searchkeyword < 0){
-                boxstyle[i].style.display = "none";
-            }
-        }
-    }else {
-        ChickenNuggets.style.backgroundColor = "white";
-        chickennuggetsSwitch = false;
-        for(let i=0; i<boxstyle.length; i++){
-            boxstyle[i].style.display = "block";
+let ChickenNuggets = document.querySelector(".chickennuggets");
+let fries = document.querySelector(".fries");
+let friedchicken = document.querySelector(".friedchicken");
+let drink = document.querySelector(".drink");
+
+let chickennuggetsSwitch = false;
+let friesSwitch = false;
+let friedchickenSwitch = false;
+let drinkSwitch = false;
+
+ChickenNuggets.onclick = chickennuggetsSearchOn;
+fries.onclick = friesSearchOn;
+friedchicken.onclick = friedchickenSearchOn;
+drink.onclick = drinkSearchOn;
+
+function SearchKeyWords(keywords) {
+    for(let i=0; i<boxstyle.length; i++){
+        let discountText = boxstyle[i].innerHTML;
+        let Searchkeyword = discountText.search(keywords);
+        if(Searchkeyword < 0){
+            boxstyle[i].style.display = "none";
         }
     }
 }
 
-let friesSwitch = false;
-let fries = document.querySelector(".fries");
-fries.onclick = friesSearchOn;
+function hide(){
+    for(let i=0; i<boxstyle.length; i++){
+        boxstyle[i].style.display = "block";
+    }
+}
+
+function ColorChangeOn(food){
+    food.style.backgroundColor = "#b4b4b4";
+}
+
+function ColorChangeOff(food){
+    food.style.backgroundColor = "";
+}
+
+function chickennuggetsSearchOn(){
+    if(!chickennuggetsSwitch){
+        SearchKeyWords("雞塊");
+        ColorChangeOn(ChickenNuggets);
+        chickennuggetsSwitch = true;
+    } else {
+        ColorChangeOff(ChickenNuggets);
+        chickennuggetsSwitch = false;
+        hide();
+    }
+}
 
 function friesSearchOn(){
     if(!friesSwitch){
         fries.style.backgroundColor = "#b4b4b4";
         friesSwitch = true;
-        for(let i=0; i<boxstyle.length; i++){
-            let discountText = boxstyle[i].innerHTML;
-            let Searchkeyword = discountText.search("薯");
-            if(Searchkeyword < 0){
-                boxstyle[i].style.display = "none";
-            }
-        }
+        SearchKeyWords("薯");
     }else {
-        fries.style.backgroundColor = "white";
+        fries.style.backgroundColor = "";
         friesSwitch = false;
-        for(let i=0; i<boxstyle.length; i++){
-            boxstyle[i].style.display = "block";
-        }
+        hide();
     }
 }
-
-let friedchickenSwitch = false;
-let friedchicken = document.querySelector(".friedchicken");
-friedchicken.onclick = friedchickenSearchOn;
 
 function friedchickenSearchOn(){
     if(!friedchickenSwitch){
         friedchicken.style.backgroundColor = "#b4b4b4";
         friedchickenSwitch = true;
-        for(let i=0; i<boxstyle.length; i++){
-            let discountText = boxstyle[i].innerHTML;
-            let Searchkeyword = discountText.search("炸雞");
-            if(Searchkeyword < 0){
-                boxstyle[i].style.display = "none";
-            }
-        }
+        SearchKeyWords("炸雞");
     }else {
-        friedchicken.style.backgroundColor = "white";
+        friedchicken.style.backgroundColor = "";
         friedchickenSwitch = false;
-        for(let i=0; i<boxstyle.length; i++){
-            boxstyle[i].style.display = "block";
-        }
+        hide();
     }
 }
-
-let drinkSwitch = false;
-let drink = document.querySelector(".drink");
-drink.onclick = drinkSearchOn;
 
 function drinkSearchOn(){
     if(!drinkSwitch){
         drink.style.backgroundColor = "#b4b4b4";
         drinkSwitch = true;
-        for(let i=0; i<boxstyle.length; i++){
-            let discountText = boxstyle[i].innerHTML;
-            let Searchkeyword = discountText.search("飲");
-            if(Searchkeyword < 0){
-                boxstyle[i].style.display = "none";
-            }
-        }
+        SearchKeyWords("飲");
     }else {
-        drink.style.backgroundColor = "white";
+        drink.style.backgroundColor = "";
         drinkSwitch = false;
-        for(let i=0; i<boxstyle.length; i++){
-            boxstyle[i].style.display = "block";
-        }
+        hide();
     }
 }

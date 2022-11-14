@@ -87,6 +87,7 @@ hr {
     border-radius: 0.5em;
     word-wrap:break-word;
     margin: 0.1em;
+    user-select :none;
 }
 
 .buttonouther {
